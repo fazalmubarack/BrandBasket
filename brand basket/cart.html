@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="nb.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="bb.html"><img src="images/bb1.jpg" alt="not found" style="width: 120px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-2" type="search" placeholder=" Search" aria-label="Search" />
+         
+          <a href="profile.html" class=" me-4 ms-4 mt-2"><i class="fa-regular fa-user nav1" style="font-size: 20px;"></i> </a>
+          <a href="cart.html" class="me-5 mt-2"><i class="fa-solid fa-cart-shopping nav1" style="font-size: 20px;"></i>
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h2 class="mb-4">Your Cart</h2>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <table class="table align-middle">
+      
+          <tbody id="cart-body" class=""></tbody>
+        </table>
+      </div>
+
+      <!-- Summary -->
+      <div class="col-lg-4">
+        <div class="card p-3 shadow">
+          <h5>Summary</h5>
+          <p>Subtotal: <span id="subtotal">$0.00</span></p>
+          <p>Shipping: <span>$10.00</span></p>
+          <h5>Total: <span id="total">$10.00</span></h5>
+          <!-- <button class="btn btn-outline-danger w-100 mt-3" onclick="checkout()">Checkout</button> -->
+           <button type="button" class="btn btn-outline-danger w-100 mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Clear cart
+          </button>
+          <button type="button" class="btn btn-outline-danger w-100 mt-1" onclick="check()">Checkout</button>
+</div>
+</div>
+</div>
+
+
+          
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true" id="moddal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to clear the cart</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-danger mt-3" data-bs-dismiss="modal" onclick="checkout()">Clear cart</button>
+                  
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+        </script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+  let cartBody = document.getElementById("cart-body");
+  cartBody.innerHTML = "";
+  let subtotal = 0;
+
+  if (cart.length === 0) {
+    cartBody.innerHTML = `<tr><td colspan="6" class="text-center">Your cart is empty</td></tr>`;
+  } else {
+    cart.forEach((item, index) => {
+      let total = item.price * item.qty;
+      subtotal += total;
+
+      cartBody.innerHTML += `
+        <div class="d-flex mt-3 align-items-center justify-content-between" 
+             style="box-shadow:0px 0px 5px black; border-radius:10px; overflow:hidden; padding:10px;flex-wrap:wrap">
+          
+          <div><img src="${item.img}" width="120"></div>
+          
+          <div class="flex-grow-1 ms-3">
+            <h5>${item.name}</h5>
+            <p class="text-muted mb-1">$${item.price.toFixed(2)}</p>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <button class="btn btn-sm btn-outline-secondary" onclick="decreaseQty(${index})">−</button>
+            <span class="mx-2">${item.qty}</span>
+            <button class="btn btn-sm btn-outline-secondary" onclick="increaseQty(${index})">+</button>
+          </div>
+
+          <div class="mx-3 fw-bold">$${total.toFixed(2)}</div>
+
+          <button class="btn btn-sm btn-danger" onclick="removeItem(${index})">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      `;
+    });
+  }
+
+  document.getElementById("subtotal").innerText = "$" + subtotal.toFixed(2);
+  document.getElementById("total").innerText = "$" + (subtotal + 10).toFixed(2);
+}
+
+// Increment quantity
+function increaseQty(index) {
+  cart[index].qty++;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+// Decrement quantity (not below 1)
+function decreaseQty(index) {
+  if (cart[index].qty > 1) {
+    cart[index].qty--;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+}
+
+// Remove single item
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+// Checkout — clears the cart
+function checkout() {
+  cart = [];
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+function check(){
+  cart=[];
+  alert("product purchased");
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+renderCart();
+
+  </script>
+
+</body>
+
+</html>

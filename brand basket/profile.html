@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="nb.css">
+    <style>
+        .errorr {
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="bb.html"><img src="images/bb1.jpg" alt="not found" style="width: 120px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="d-flex ms-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder=" Search" aria-label="Search" />
+
+                    <a href="profile.html" class=" me-4 ms-4 mt-2"><i class="fa-regular fa-user nav1"
+                            style="font-size: 20px;"></i> </a>
+                    <a href="cart.html" class="me-5 mt-2"><i class="fa-solid fa-cart-shopping nav1"
+                            style="font-size: 20px;"></i>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div>
+        <div class="container p-2 mt-5  " id="logcon" style="background-color: white;width:350px;">
+            <div
+                style="width: 100%; background-color: rgb(225, 226, 226);margin-bottom: 10px;padding: 10px;text-align: center;border-radius: 4px;">
+                Free shipping for members.</div>
+            <div class="btn-group" style="width: 100%;margin-bottom: 10px;" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-danger border-1 p-2 " for="btnradio1">Log in</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-danger border-1 p-2" for="btnradio2">Create account</label>
+            </div>
+            <div id="loginform">
+                <form id="myform">
+                    <input type="email" placeholder="Email" id="loginemail" class="inpp"><br>
+                    <div class="errorr" id="errorloginemail"></div>
+                    <input type="password" placeholder="Password" id="loginpassword" class="inpp">
+                    <div class="errorr" id="errorloginpassword"></div>
+                    <input type="checkbox" id="logincheck" style="margin-top: 20px;" class="rem"><label for="remember"
+                        class="ms-1">Remember me</label>
+                    
+                    <a href="#" class="b" style="float: right; margin-top: 15px;">Forgot Password</a><br>
+                     <div class="errorr" id="errorlogincheck"></div>
+                    <button type="submit" class="btn btn-danger w-100 mt-3 p-2">Login</button>
+                </form>
+            </div>
+            <div id="createform">
+
+            </div>
+            <p style="font-size: 14px; margin-top: 20px;">By logging into my account, I agree to Brand Basket’s <a
+                    href="#" style="text-decoration: underline;">Terms & Conditions </a> and <a href="#"
+                    style="text-decoration: underline;"> Privacy Policy.</a></p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Signup Banner -->
+    <div class="signup-section" style="margin-top: 150px;" id="about">
+        <span>Be the first to know about new arrivals</span>
+        <a href="profile.html" class="btn btn-danger px-3 py-2 ms-3">Sign up</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Help -->
+                <div class="col-6 col-md-3 mb-4">
+                    <h5>Help</h5>
+                    <ul>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Start a return</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Become a member</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Shop -->
+                <div class="col-6 col-md-3 mb-4">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Find a store</a></li>
+                        <li><a href="#">Gift cards</a></li>
+                        <li><a href="#">Shipping information</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- About Us -->
+                <div class="col-6 col-md-3 mb-4">
+                    <h5>About Us</h5>
+                    <ul>
+                        <li><a href="#">Our Purpose</a></li>
+                        <li><a href="#">Responsible leadership</a></li>
+                        <li><a href="#">New Balance Foundation</a></li>
+                        <li><a href="#">Careers</a></li>
+
+
+                    </ul>
+                </div>
+
+                <!-- For You -->
+                <div class="col-6 col-md-3 mb-4">
+                    <h5>For You</h5>
+                    <ul>
+                        <li><a href="#">Special discounts</a></li>
+                        <li><a href="#">Idea submission</a></li>
+                        <li><a href="#">Affiliate program</a></li>
+                        <li><a href="#">Counterfeit products</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Brand Info -->
+            <div class="row align-items-center mt-4">
+                <div class="col-md-9 brand-text">
+                    <h3>Fearlessly Independent</h3>
+
+                    <p class="mt-2">
+                        Independent since 1906, we empower people through sport and craftsmanship to create
+                        positive change in communities around the world.
+                    </p>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="col-md-3 text-md-end social-icons mt-4 mt-md-0">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+        </script>
+    <script>
+       
+        let loginbtn = document.getElementById("btnradio1");
+        let createbtn = document.getElementById("btnradio2");
+        let loginform = document.getElementById("loginform");
+        let createform = document.getElementById("createform");
+
+        // initially hide the create form
+        createform.style.display = "none";
+
+        loginbtn.addEventListener("click", () => {
+            loginform.style.display = "block";
+            createform.style.display = "none";
+
+
+
+            
+        });
+
+        const logform = document.getElementById("myform");
+            logform.addEventListener("submit", (f) => {
+                f.preventDefault();
+                istrue = true;
+                let loginemail = document.getElementById("loginemail").value.trim();
+                let loginpassword = document.getElementById("loginpassword").value.trim();
+                let logincheck = document.getElementById("logincheck").checked;
+
+                let errorloginemail = document.getElementById("errorloginemail")
+                let errorloginpassword = document.getElementById("errorloginpassword")
+                let errorlogincheck = document.getElementById("errorlogincheck")
+
+                if (loginemail === "") {
+                    errorloginemail.innerHTML = "Please enter a valid email"
+                    istrue = false;
+                }else if (!loginemail.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+                    errorloginemail.innerHTML = "invalid email format (eg: abcd@gmail.com)"
+                     istrue = false;
+                }
+
+                if (loginpassword === "") {
+                    errorloginpassword.innerHTML = "please enter a password";
+                     istrue = false;
+                } else if (loginpassword.length < 8) {
+                    errorloginpassword.innerHTML = "password must be 8 charaters";
+                     istrue = false;
+
+                } else if (!/[A-Z]/.test(loginpassword)) {
+                    errorloginpassword.innerHTML = "password must contain atleast one Uppercase letter"
+                     istrue = false;
+                } else if (!/[0-9]/.test(loginpassword)) {
+                    errorloginpassword.innerHTML = "password must contain atleast number";
+                    istrue = false;
+                }
+                 if (!logincheck) {
+                    errorlogincheck.innerHTML = "please check the box before submitting"
+                    istrue = false;
+                }
+                if(istrue){
+                    
+                    logform.reset();
+                    
+                    if(loginemail==="fazalmubarack@gmail.com" && loginpassword==="Fazal1234"){
+                        alert("Logged successfully")
+                   cc=document.getElementById("logcon")
+                   cc.innerHTML=`
+                   <div class="card p-5" style="text-align:center;margin-bottom:50px;">
+                   
+                   <img src="images/profile.png" style="width:50%;border-radius:40%;margin-left:50px;">
+                   <h2 class="mt-1">fazal mubarack</h2>
+                   <div>Male</div>
+                   <div>Email: fazalmubarack@gmail.com</div>
+                   <div>phone: 7510939478</div>
+                  
+
+                   </div>
+                
+                   `
+        
+
+                }else if(loginemail==="fazalmubarack@gmail.com" && loginpassword!=="Fazal1234"){
+                    alert("Invalid Password")
+                }else if(loginemail!=="fazalmubarack@gmail.com" && loginpassword==="Fazal1234"){
+                    alert("Invalid Username or Password")
+                }else{
+                    alert("No Data found create account")
+                }
+                }
+               
+            })
+        createbtn.addEventListener("click", () => {
+            loginform.style.display = "none";
+            createform.style.display = "block";
+            createform.innerHTML = `
+    <form id="myform2">
+      <input type="text" id="firstname" placeholder="First name" class="inpp"><br>
+      <div id="errorfirstname" class="errorr"></div>
+      <input type="text" id="lastname" placeholder="Last name" class="inpp"><br>
+      <div id="errorlastname" class="errorr"></div>
+      <input type="email" id="email" placeholder="Email" class="inpp"><br>
+      <div id="erroremail" class="errorr"></div>
+      <input type="password" id="password" placeholder="Password" class="inpp"><br>
+      <div id="errorpassword" class="errorr"></div>
+      <input type="password" id="confirmpassword" placeholder="Confirm password" class="inpp"><br>
+      <div id="errorconfirmpassword" class="errorr"></div>
+      <input type="checkbox" id="check" style="margin-top: 20px;" class="rem">
+      
+      <label for="remember2" class="ms-1">Confirm above details are valid</label><br>
+      <div id="errorcheck" class="errorr"></div>
+      <button type="submit" class="btn btn-danger w-100 mt-3 p-2">Create Account</button>
+    </form>
+  `
+            const form = document.getElementById("myform2");
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                isvalid = true;
+                let firstname = document.getElementById("firstname").value.trim();
+                let lastname = document.getElementById("lastname").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let password = document.getElementById("password").value.trim();
+                let confirmpassword = document.getElementById("confirmpassword").value.trim();
+                let check = document.getElementById("check").checked;
+
+                let errorfirstname = document.getElementById("errorfirstname");
+                let errorlastname = document.getElementById("errorlastname");
+                let erroremail = document.getElementById("erroremail");
+                let errorpassword = document.getElementById("errorpassword");
+                let errorconfirmpassword = document.getElementById("errorconfirmpasssword");
+                let errorcheck = document.getElementById("errorcheck");
+
+                if (firstname === "") {
+                    errorfirstname.innerHTML = "Please enter your first name"
+                    isvalid = false;
+                }
+                if (lastname === "") {
+                    errorlastname.innerHTML = "Please enter your last name"
+                    isvalid = false;
+                }
+                if (email === "") {
+                    erroremail.innerHTML = "plese enter a valid email"
+                    isvalid = false;
+                } else if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+                    erroremail.innerHTML = "invalid email format (eg: abcd@gmail.com)"
+                    isvalid = false;
+                }
+
+                if (password === "") {
+                    errorpassword.innerHTML = "please enter a password";
+                    isvalid = false;
+                } else if (password.length < 8) {
+                    errorpassword.innerHTML = "password must be 8 charaters";
+                    isvalid = false;
+
+                } else if (!/[A-Z]/.test(password)) {
+                    errorpassword.innerHTML = "password must contain atleast one Uppercase letter"
+                    isvalid = false;
+                } else if (!/[0-9]/.test(password)) {
+                    errorpassword.innerHTML = "password must contain atleast number";
+                    isvalid = false;
+                }
+
+                if (password !== confirmpassword) {
+                    errorconfirmpassword.innerHTML = "password mismatch please enter correct password"
+                    isvalid = false;
+                }
+                if (!check) {
+                    errorcheck.innerHTML = "please check the box before submitting"
+                    isvalid = false;
+                }
+
+                if (isvalid) {
+                    alert("form submitted successfully")
+                    form.reset();
+                    document.querySelectorAll("errorr").remove();
+                }
+
+
+            })
+
+
+        }).join('')
+
+
+    </script>
+
+</body>
+
+</html>

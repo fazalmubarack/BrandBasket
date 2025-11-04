@@ -1,0 +1,68 @@
+.head {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 42px;
+}
+
+.nav1 {
+  color: black;
+  transition: 0.2s ease-in;
+  display: block;
+
+
+
+}
+
+.nav1:hover {
+  color: red;
+
+}
+
+.nav1:active {
+  color: red;
+
+}
+
+.new {
+  font-weight: bold;
+  color: rgb(213, 126, 5);
+  font-size: 12px;
+}
+
+.sh {
+
+  font-weight: bold;
+}
+
+.sc {
+  font-size: 12px;
+}
+
+.lin {
+  text-decoration: none;
+  color: rgba(25, 24, 24, 0.845);
+  transition: 0.9s;
+  font-weight: bold;
+}
+
+.lin:hover {
+  text-decoration: underline;
+}
+
+
+.din {
+  text-decoration: none;
+  color: rgba(25, 24, 24, 0.845);
+  transition: 0.9s;
+}
+
+.din:hover {
+  text-decoration: underline;
+}
+.card:hover{
+      scale: 1.01;
+    }
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    
